@@ -1,0 +1,27 @@
+<div class="form-container">
+  <div class="header">
+    <label for="nombre">Escriba su nombre aquí:</label>
+    <input type="text" id="nombre" [(ngModel)]="nombre" placeholder="Ingresa tu nombre">
+  </div>
+  <div class="gender-selection">
+    <div class="gender-option masculino" [class.selected]="sexo === 'masculino'" (click)="sexo = 'masculino'"></div>
+    <div class="gender-option femenino" [class.selected]="sexo === 'femenino'" (click)="sexo = 'femenino'"></div>
+  </div>
+  <div class="slider-container">
+    <label for="altura">Altura (cm):</label>
+    <input type="range" id="altura" [(ngModel)]="altura" min="100" max="250">
+    <span>{{ altura }} cm</span>
+  </div>
+  <div class="slider-container">
+    <label for="peso">Peso (kg):</label>
+    <input type="range" id="peso" [(ngModel)]="peso" min="30" max="200">
+    <span>{{ peso }} kg</span>
+  </div>
+  <div class="actions">
+    <button type="button" class="reset-button" (click)="resetFormulario()">X</button>
+    <button type="submit" class="submit-button" (click)="calcularIMC()">✔</button>
+  </div>
+  <div *ngIf="resultado" class="resultado">
+    <p>{{ resultado }}</p>
+  </div>
+</div>

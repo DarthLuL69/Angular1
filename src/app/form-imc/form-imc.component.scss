@@ -1,0 +1,171 @@
+$form-bg-color: rgba(47, 79, 79, 0.9); // DarkSlateGray semi-transparente
+$form-border-color: #d3d3d3; // LightGray
+$form-header-bg-color: #5f9ea0; // CadetBlue
+$form-header-text-color: #ffffff;
+$form-button-bg-color: #5f9ea0; // CadetBlue
+$form-button-text-color: #ffffff;
+$form-button-reset-bg-color: #ff4d4d;
+$form-input-bg-color: #f0f8ff; // AliceBlue
+$form-input-border-color: #d3d3d3; // LightGray
+$slider-thumb-color: #5f9ea0; // CadetBlue
+$slider-track-color: #b0c4de; // LightSteelBlue
+
+html, body {
+  height: 100%;
+}
+
+.form-container {
+  background-color: $form-bg-color;
+  padding: 30px;
+  border-radius: 0;
+  max-width: 500px;
+  margin: 50px auto;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  background-color: $form-header-bg-color;
+  color: $form-header-text-color;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 0;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input[type="text"] {
+    width: calc(100% - 30px);
+    padding: 10px;
+    border: 1px solid $form-input-border-color;
+    border-radius: 5px;
+    background-color: $form-input-bg-color;
+    font-size: 1em;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.gender-selection {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+
+  .gender-option {
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    transition: opacity 0.3s, transform 0.3s;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 10px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &.masculino {
+      background-image: url('IMGS/Hombre.png');
+    }
+
+    &.femenino {
+      background-image: url('IMGS/Femenino.png');
+    }
+
+    &.selected {
+      opacity: 1;
+      border-color: $form-header-bg-color;
+    }
+  }
+}
+
+.slider-container {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+  input[type="range"] {
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: $slider-track-color;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      background: $slider-thumb-color;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    &::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      background: $slider-thumb-color;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+  }
+
+  span {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+
+  .reset-button, .submit-button {
+    width: 45%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .reset-button {
+    background-color: $form-button-reset-bg-color;
+    color: $form-button-text-color;
+  }
+
+  .submit-button {
+    background-color: $form-button-bg-color;
+    color: $form-button-text-color;
+  }
+}
+
+.resultado {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ffffff;
+}

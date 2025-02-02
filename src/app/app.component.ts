@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { FormImcComponent } from './form-imc/form-imc.component';
+import { HistoryComponent } from './history/history.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [FormImcComponent, HistoryComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'Angular1';
+  historial: string[] = [];
+
+  agregarAlHistorial(imc: string) {
+    this.historial.push(imc);
+  }
 }

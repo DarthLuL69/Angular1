@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-image: url('IMGS/wallpaper.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
