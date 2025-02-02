@@ -1,25 +1,37 @@
+@use "sass:map";
+
+$colors: (
+  bg: rgba(47, 79, 79, 0.9),
+  border: #d3d3d3,
+  text: #ffffff
+);
+
 .history-container {
-  background-color: rgba(0, 0, 0, 0.7); // Fondo medio oscuro transparente
-  color: #ffffff; // Letras blancas
-  border: 1px solid #b0c4de; // LightSteelBlue
+  background-color: map.get($colors, bg);
+  border: 1px solid map.get($colors, border);
   padding: 20px;
-  border-radius: 10px;
   max-width: 400px;
-  margin: 20px auto;
+  margin: 50px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
 }
 
 .history-list {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
-
+  margin: 0;
+  
   li {
+    color: map.get($colors, text);
     padding: 10px;
-    border-bottom: 1px solid #b0c4de;
-
+    border-bottom: 1px solid map.get($colors, border);
+    transition: background-color 0.3s;
+    
     &:last-child {
       border-bottom: none;
+    }
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
     }
   }
 }
